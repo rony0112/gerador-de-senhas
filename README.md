@@ -25,3 +25,6 @@ JavaScript Vanilla (Puro): Lógica de manipulação de DOM, gerenciamento de est
 LocalStorage API: Para persistência de dados local sem necessidade de banco de dados externo.
 
 Web Crypto API: Para geração de valores aleatórios de nível industrial.
+
+Teste
+https://rony0112.github.io/gerador-de-senhas/
