@@ -1,5 +1,5 @@
 # gerador-de-senhas
-Gerador de Senhas Pro - Cyberpunk Edition
+
 Este projeto consiste em uma aplicação web avançada para geração de senhas aleatórias e seguras. Focada em Segurança da Informação e UX (User Experience), a ferramenta combina algoritmos de criptografia modernos com uma interface futurista de alto impacto visual.
 
   Funcionalidades Principais
