@@ -26,5 +26,6 @@ LocalStorage API: Para persistência de dados local sem necessidade de banco de 
 
 Web Crypto API: Para geração de valores aleatórios de nível industrial.
 
-Teste
+🌐 Visualize o projeto:
+
 https://rony0112.github.io/gerador-de-senhas/
