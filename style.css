@@ -1,0 +1,159 @@
+:root {
+  --bg: #0a0012;
+  --card-bg: rgba(18, 8, 35, 0.85);
+  --primary: #7c3aed;
+  --primary-glow: #a78bfa;
+  --accent: #00eaff;
+  --danger: #ff3366;
+  --success: #00ff9d;
+  --text: #e5d9ff;
+  --muted: #b19cf9;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg) 0%, #120024 100%);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* O Segredo do Layout Lado a Lado */
+.main-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Impede de esticar verticalmente */
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.container {
+  flex: 1; /* Ocupa o espaço disponível */
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(124,58,237,0.3);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.7);
+  max-width: 650px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, var(--primary-glow), var(--accent));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.password-box {
+  background: rgba(0,0,0,0.4);
+  border: 2px dashed var(--primary);
+  border-radius: 16px;
+  padding: 1.5rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-all;
+}
+
+.copy-btn {
+  position: absolute;
+  right: 15px;
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls { display: flex; flex-direction: column; gap: 1.5rem; }
+
+input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+select {
+  width: 100%;
+  padding: 12px;
+  background: #1a0b2e;
+  color: white;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+}
+
+.generate-btn {
+  padding: 1.2rem;
+  background: linear-gradient(90deg, var(--primary), #5b21b6);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Painel Lateral */
+.side-panel {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.widget {
+  background: var(--card-bg);
+  border: 1px solid rgba(124,58,237,0.3);
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+.widget h4 { color: var(--accent); margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase; }
+
+.scan-line { position: relative; overflow: hidden; }
+.scan-bar {
+  height: 2px;
+  background: var(--accent);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  animation: scan 4s linear infinite;
+}
+
+@keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
+
+/* Força e Histórico */
+.strength-container { height: 10px; background: #222; border-radius: 5px; margin-top: 10px; overflow: hidden; }
+#strengthBar { height: 100%; width: 0%; transition: 0.5s; background: var(--danger); }
+
+.history-item {
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.clear-history-btn { background: none; border: none; color: var(--danger); cursor: pointer; margin-top: 10px; }
+.footer { text-align: center; margin-top: 2rem; opacity: 0.5; }
+
+/* Responsividade */
+@media (max-width: 950px) {
+  .main-wrapper { flex-direction: column; align-items: center; }
+  .side-panel { width: 100%; max-width: 650px; }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerador de Senhas - Ronald Richard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="main-wrapper">
+    <main class="container">
+      <h1>Gerador de Senhas</h1>
+
+      <div class="password-box" id="passwordBox">
+        <span id="password">Clique em gerar</span>
+        <button class="copy-btn" id="copyBtn">Copiar</button>
+      </div>
+
+      <div class="controls">
+        <div class="input-group">
+          <label>Comprimento: <span id="lengthValue">16</span></label>
+          <input type="range" id="length" min="8" max="32" value="16"/>
+        </div>
+
+        <div class="input-group">
+          <label>Segurança</label>
+          <select id="level">
+            <option value="basic">Básico</option>
+            <option value="medium" selected>Médio</option>
+            <option value="strong">Forte</option>
+            <option value="extreme">Extremo</option>
+          </select>
+        </div>
+
+        <button class="generate-btn" id="generate">Gerar Senha Poderosa</button>
+
+        <div class="strength-container">
+          <div id="strengthBar"></div>
+        </div>
+
+        <div class="history-container">
+          <h3>Histórico Recente</h3>
+          <ul id="passwordHistory"></ul>
+          <button id="clearHistory" class="clear-history-btn">Limpar Histórico</button>
+        </div>
+      </div>
+      <div class="footer">Feito por Ronald Richard</div>
+    </main>
+
+    <aside class="side-panel">
+      <div class="widget">
+        <h4>🔒 Segurança</h4>
+        <p id="security-tip">Carregando dica de segurança...</p>
+      </div>
+      
+      <div class="widget scan-line">
+        <h4>📡 Status do Sistema</h4>
+        <div class="scan-bar"></div>
+        <div class="status-info">
+          <small>Firewall: <span style="color:var(--success)">Ativo</span></small><br>
+          <small>Encryption: <span style="color:var(--accent)">AES-256</span></small><br>
+          <small>Status: <span id="sys-status">Protegido</span></small>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
